@@ -1,26 +1,35 @@
 class Solution:
     def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
         
-#         Brute Force Solution
+        
+        #Zipping the corrosponding indexes of the sublists and returning the New list
+        return zip(*matrix)
+    
+#     # TC:O() & SC:O()
 
-        output = []
         
-        # matrix = [[1,2,3],[4,5,6],[7,8,9]]
         
-        for i in range(len(matrix[0])):
-            subList = []
+        
+        
+        
+        
+        
+        
+#         #         Brute Force Solution
+
+#         output = []
+        
+#         # matrix = [[1,2,3],[4,5,6],[7,8,9]]
+        
+#         for i in range(len(matrix[0])):
+#             subList = []
            
-            for j in range(len(matrix)):
-                subList.append(matrix[j][i])
-            output.append(subList)
+#             for j in range(len(matrix)):
+#                 subList.append(matrix[j][i])
+#             output.append(subList)
             
-        return output
-        
-        
-        
-        
-        
-        
+#         return output
+# TC :O(N) & SC:O(1)
         
         
         
