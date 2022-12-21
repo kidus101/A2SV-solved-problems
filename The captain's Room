@@ -1,0 +1,20 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+# If I create a counter for the list and create a for loop to check the value wich is going to be zero I will get the answer because all the rest of the values will be equal to k.
+
+# If countedList.values() != k then return that value
+
+#How can I use the inputs in my code as a List
+
+from collections import Counter
+
+K = int(input())
+inputList = list(map(int, input().split()))
+
+countedList = Counter(inputList)
+
+for key,value in countedList.items() :
+    if countedList[key] != K:
+        ans = key
+print(ans)
+        
