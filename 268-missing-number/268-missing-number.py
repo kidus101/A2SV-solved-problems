@@ -11,7 +11,7 @@ class Solution:
         #looping through the max+1 to create the list of total
         for i in range(N+1):
             total_list.append(i)
-        print(total_list)
+       
             
         for i in range(len(nums)):
             if (nums[i] in total_list):
