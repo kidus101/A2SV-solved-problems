@@ -13,14 +13,14 @@ class Solution:
        
 
         for column in range(columns):
-            word = ""
+            word = []
             for row in range(rows):
                 if column < len(string_list[row]):
-                    word += string_list[row][column]
+                    word.append(string_list[row][column]) 
                 else:
-                    word += " "
-            word=word.rstrip()
-            output_list.append(word)
+                    word .append(" ")
+            
+            output_list.append("".join(word).rstrip())
         return (output_list)  
     
     # TC: O(N^2) & SC = O(N)
