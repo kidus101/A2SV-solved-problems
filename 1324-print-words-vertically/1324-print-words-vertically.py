@@ -22,5 +22,7 @@ class Solution:
             word=word.rstrip()
             output_list.append(word)
         return (output_list)  
+    
+    # TC: O(N^2) & SC = O(N)
         
        
