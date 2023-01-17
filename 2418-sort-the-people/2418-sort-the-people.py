@@ -4,14 +4,16 @@ class Solution:
         for i in range(len(array)):
             for j in range(i + 1 , len(array)):
                 if array[i] < array[j]:
+
+                    array[i] , array[j] = array[j] , array[i]
+                    # temp = array[i]
+                    # array[i] = array[j]
+                    # array[j] = temp
                     
-                    temp = array[i]
-                    array[i] = array[j]
-                    array[j] = temp
-                    
-                    cur = names[i]
-                    names[i] = names[j]
-                    names[j] = cur
+                    names[i] , names[j] = names[j] , names[i]
+                    # cur = names[i]
+                    # names[i] = names[j]
+                    # names[j] = cur
                     
         return names
 
