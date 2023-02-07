@@ -15,4 +15,4 @@ class Solution:
             curr = temp
         return prev
     
-    # TC and SC are  both O(n)
+    # Time:O(N) & SC:O(1)
