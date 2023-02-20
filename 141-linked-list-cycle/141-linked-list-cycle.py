@@ -7,35 +7,35 @@
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         
-#         fast = head
+        # if not head:
+        #     return False
         
-#         if head is None:
-#             return False
-        
-#         slow = head.next
-#         while slow:
-#             slow.
-        
-#         while  fast and slow:
-#             slow = slow.next
-#             fast = fast.next.next
+        fast = head
+        slow = head
+ 
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
             
-#             if slow == fast:
-#                 return True
-    
-#         return False
-            
-#             Fast and slow pointers will land on one node  
-        
-        set_num = set()
-        cur = head
-        
-        while cur :
-            
-            if cur not in set_num:
-                set_num.add(cur)
-                cur = cur.next 
-            else:
+            if slow == fast:
                 return True
     
         return False
+            
+
+        
+    
+    
+#     Using A set to check if the Node is already in the set If it's return True
+#         set_num = set()
+#         cur = head
+        
+#         while cur :
+            
+#             if cur not in set_num:
+#                 set_num.add(cur)
+#                 cur = cur.next 
+#             else:
+#                 return True
+    
+#         return False
