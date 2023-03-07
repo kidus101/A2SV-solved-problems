@@ -9,10 +9,10 @@ class Solution:
             
             mid=(left + right ) //2
             
-            if arr[mid-1]<arr[mid]>arr[mid+1]:
+            if arr[mid-1] < arr[mid] > arr[mid+1]:
                 return mid
             
-            elif arr[mid+1]>arr[mid]:
+            elif arr[mid+1] > arr[mid]:
                 left = mid+1
                 
             else:
