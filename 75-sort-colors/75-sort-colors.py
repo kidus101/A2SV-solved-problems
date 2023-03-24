@@ -6,15 +6,12 @@ def counting_sort(nums):
     count = [0] * (max_num + 1)
     sorted_nums = [0] * len(nums)
     
-    # Count the frequency of each number in the list
     for num in nums:
         count[num] += 1
     
-    # Calculate the cumulative sum of the count array
     for i in range(1, len(count)):
         count[i] += count[i-1]
     
-    # Sort the list in ascending order
     for num in nums:
         index = count[num] - 1
         sorted_nums[index] = num
