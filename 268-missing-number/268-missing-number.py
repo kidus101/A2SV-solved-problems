@@ -1,14 +1,31 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        output = [ i for i in range(len(nums) + 1)]
-
-        for num in nums:
-            if num in output:
-                output.remove(num)
+        
+        i = 0
+        
+        while i < len(nums):
+            j = nums[i]
+            if j < len(nums) and nums[i] != nums[j]:
+                nums[i], nums[j] = nums[j], nums[i]
             else:
-                continue
+                i += 1
+      
+        for idx in range(len(nums)):
+            if idx != nums[idx]:
+                return (idx)
+        
+        return len(nums)
+        
+        
+#         output = [ i for i in range(len(nums) + 1)]
 
-        return  output[0]
+#         for num in nums:
+#             if num in output:
+#                 output.remove(num)
+#             else:
+#                 continue
+
+#         return  output[0]
 
         
         
