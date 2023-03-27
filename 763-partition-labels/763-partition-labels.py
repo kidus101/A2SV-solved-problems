@@ -1,19 +1,22 @@
 class Solution:
     def partitionLabels(self, s: str) -> List[int]:
+        
         output = []
         dict = {}
-        for i,j in enumerate(s):
-            dict[j]=i
+        
+        for idx,char in enumerate(s):
+            dict[char]=idx
             
         start = 0
         end = 0
+        size = 0
         
-        for i,j in enumerate(s):
+        for idx,char in enumerate(s):
+            size += 1
+            end = max(end,dict[char])
             
-            end = max(end,dict[j])
-            
-            if(i==end):
-                output.append(end-start+1)
-                start = end + 1
+            if(idx==end):
+                output.append(size)
+                size = 0
                 
         return output
