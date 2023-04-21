@@ -2,27 +2,30 @@ class Solution:
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
         
         
-        default_dict = defaultdict(list)
-
+        graph = defaultdict(list)
+# changed edges to adjacency list
         for node1 , node2 in edges:
-            default_dict[node1].append(node2)
-            default_dict[node2].append(node1)
-            
+            graph[node1].append(node2)
+            graph[node2].append(node1)
+          
+        # print(graph)
+        
         visited = set()
 
-        def dfs(vertex, visited, default_dict):
-            if vertex == destination:
+        def dfs(node, visited, graph):
+            if node == destination:
                 return True
 
-            visited.add(vertex)
+            visited.add(node)
 
-            for neighbour in default_dict[vertex]:
+            for neighbour in graph[node]:
                 if neighbour not in visited:
-                    result = dfs(neighbour, visited, default_dict)
-# What does checking result give us 
+                    result = dfs(neighbour, visited, graph)
+
                     if result:
+                        print("#")
                         return True
                     
                     
-        return dfs(source,visited,default_dict)
+        return dfs(source,visited,graph)
     
